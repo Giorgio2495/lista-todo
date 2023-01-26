@@ -7,12 +7,6 @@ const Header = ({ changeTheme }) => {
     const body = document.querySelector("body");
     const main = document.querySelector("main");
     useEffect(() => {
-        return () => {
-            toggleTheme();
-        }
-    }, [ThemeLight]);
-    
-    const toggleTheme = () => {
         if(ThemeLight) {
             changeTheme("light");
             body.style.backgroundColor = "hsl(236, 33%, 92%)";
@@ -24,7 +18,9 @@ const Header = ({ changeTheme }) => {
             main.classList.add("dark");
             main.classList.remove("light");
         }
-    }
+        
+    }, [ThemeLight, body.style, changeTheme, main.classList]);
+    
     return (
         <div className="header-task">
             <h1> T O D O</h1>

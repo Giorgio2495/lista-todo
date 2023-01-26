@@ -27,7 +27,7 @@ const Mnsj = ({ tasks, filter, loading }) => {
                 text: "NECESITAS VOLVER AL TRABAJO",
             });
         }
-    }, [tasks]);
+    }, [filter, loading, tasks]);
     
     return (
         <>
