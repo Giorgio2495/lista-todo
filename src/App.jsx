@@ -56,30 +56,30 @@ const App = () => {
 
     return (
         <>
-        <img src={HeaderDarkDesktop} className="img-dark-desktop" alt="desktop header dark" />
-        <img src={HeaderDarkMobile} className="img-dark-mobile" alt="mobile header dark" />
-        <img src={HeaderLightDesktop} className="img-light-desktop" alt="desktop header light" />
-        <img src={HeaderLightMobile} className="img-light-mobile" alt="mobile header light" />
-             
+            <img src={HeaderDarkDesktop} className="img-dark-desktop" alt="desktop header dark" />
+            <img src={HeaderDarkMobile} className="img-dark-mobile" alt="mobile header dark" />
+            <img src={HeaderLightDesktop} className="img-light-desktop" alt="desktop header light" />
+            <img src={HeaderLightMobile} className="img-light-mobile" alt="mobile header light" />
+
             <div className={"content " + Theme}>
                 <HeaderCreations changeTheme={changeTheme} />
                 <AddCreations countTask={Tasks.length} setReset={reset} reset={Reset} />
                 {Loading ?
-                <div className="loading">
-                    <h2>Cargando...</h2>
-                    <BiLoaderAlt className="icon-loading" />
-                </div>
-                : null}
+                    <div className="loading">
+                        <h2>Cargando...</h2>
+                        <BiLoaderAlt className="icon-loading" />
+                    </div>
+                    : null}
                 <MnsjCreations tasks={Tasks} filter={CurrentFilter} loading={Loading} />
                 <ListCreations list={Tasks} />
-                <ConfigCreations 
-                numTasks={Tasks.length}
-                completed={Id}
-                staticTasks={TasksAll}
-                getAll={getAllTasks}
-                getActive={getActiveTasks}
-                getCompleted={getCompletedTasks}
-                reset={Reset} />
+                <ConfigCreations
+                    numTasks={Tasks.length}
+                    completed={Id}
+                    staticTasks={TasksAll}
+                    getAll={getAllTasks}
+                    getActive={getActiveTasks}
+                    getCompleted={getCompletedTasks}
+                    reset={Reset} />
                 <FooterCreations />
             </div>
         </>
