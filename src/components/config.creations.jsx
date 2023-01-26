@@ -13,7 +13,11 @@ const Config = ({ numTasks, completed, staticTasks, getAll, getActive, getComple
     const clearCompleted = async () => {
         completed.forEach(id => deleteDoc(doc(store, "tasks", id)));
     }
-    const filterAll = () => (getAll(), setFilter("all"));
+    /*const filterAll = () => (getAll(), setFilter("all"));*/
+    const filterAll = () => {
+        getAll()
+        setFilter("all")
+    }
 
     const filterActive = () => {
         const active = staticTasks.filter(task => !task.completed);
