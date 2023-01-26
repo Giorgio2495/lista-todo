@@ -1,0 +1,42 @@
+@use '../util/color' as color;
+
+.mnsg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 1em 0em;
+    padding: 1em 0em;
+    width: 100%;
+    background-color: color.$veryDarkDesaturatedBlue;
+    font-family: "Josefin Sans", sans-serif;
+    transition: 1s ease;
+    border-radius: 10px;
+    .icon {
+        color: rgb(22, 141, 184);
+    }
+    .title {
+        font-size: 1.3rem;
+        padding: 0.5em;
+        margin: 0;
+        color: rgb(255, 255, 255);
+        transition: 1s ease;
+    }
+    .text {
+        font-size: 0.9rem;
+        color: rgba(221, 205, 199, 0.707);
+        transition: 1s ease;
+    }
+}
+
+.content.light {
+    .msg {
+        background-color: color.$veryLightGray;
+        .title {
+            color: black;
+        }
+        .text {
+            color: gray;
+        }
+    }
+}

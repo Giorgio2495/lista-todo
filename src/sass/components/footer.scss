@@ -1,0 +1,17 @@
+@use "../util/color" as color;
+
+.footer-task {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 3em;
+    margin-bottom: 3em;
+
+    span {
+        font-family: 'Josefin Sans' sans-serif;
+        color: color.$veryDarkGrayishBlue;
+    }
+    
+}

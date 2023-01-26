@@ -1,0 +1,139 @@
+@use "../util/color" as color;
+
+.config-task {
+    display: block;
+    font-family: "Josefin Sans", sans-serif;
+    transition: 1s ease;
+
+    .counting-items {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        background-color: color.$veryDarkDesaturatedBlue;
+        margin-bottom: 1em;
+        border-top: 1px solid color.$veryDarkGrayishBlueDarker;
+        padding: 0.9em 0em;
+        border-bottom-left-radius: 6px;
+        border-top-right-radius: 6px;
+
+        span {
+            display: block;
+            width: 45%;
+            color: color.$darkGrayishBlue;
+            font-size: 0.6rem;
+        }
+        
+        .delete-items {
+            display: flex;
+            justify-content: flex-end;
+            width: 45%;
+            
+            button {
+                background-color: transparent;
+                border: none;
+                color: color.$darkGrayishBlue;
+                font-family: "Josefin Sans", sans-serif;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .filter-items {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        background-color: color.$veryDarkDesaturatedBlue;
+        padding: 0.9em 0em;
+
+        button {
+            display: block;
+            background-color: transparent;
+            border: none;
+            font-family: "Josefin Sans" sans-serif;
+            font-size: 1rem;
+            color: color.$darkGrayishBlue;
+            font-weight: 700;
+            cursor: pointer;
+            &:last-child {
+                margin-right: 2em;
+            }
+            &:hover{
+                color: color.$veryLightGray;
+            }
+            &.active {
+                color: #0074d9;
+            }
+        }
+    }
+}
+
+@media (min-width: 600px) {
+    .config-task {
+        position: relative;
+        background-color: color.$veryDarkDesaturatedBlue;
+        border-top: 1px solid color.$veryDarkGrayishBlue;
+        width: 100%;
+        padding: 1.5em 0em;
+
+        .counting-items {
+            position: absolute;
+            background-color: transparent;
+            border: none;
+            top: 0;
+
+            span, .delete-items {
+                position: absolute;
+                width: 28%;
+                top: 50%;
+            }
+            span {
+                left: 1em;
+            }
+            .delete-items {
+                right: 0em;
+                button:hover {
+                    color: color.$veryLightGray;
+                }
+            }
+        }
+        .filter-items {
+            position: absolute;
+            background-color: transparent;
+            width: 35%;
+            top: 0;
+            left: 50%;
+            transform: translate(-45%, 0%);
+            button {
+                font-size: 0.8rem;
+               
+            }
+        }
+    }
+    .content.light {
+        .config-task {
+            border-top: 1px solid color.$lightGrayishBlue;
+            background-color: color.$veryLightGray;
+            .counting-items, .filter-items {
+                background-color: transparent !important;
+                button:hover {
+                    color: color.$veryDarkDesaturatedBlue;
+                }
+            }
+        }
+    }
+}
+
+.content.light {
+    .config-task {
+        box-shadow: 0px 10px 15px rgba(143, 121, 121, 0.3);
+        .counting-items {
+            background-color: color.$veryLightGray;
+        }
+        .filter-items {
+            background-color: color.$veryLightGray;
+        }
+    }
+}

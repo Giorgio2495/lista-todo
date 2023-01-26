@@ -1,0 +1,43 @@
+.header-task {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+h1, .theme-box {
+    display: flex;
+    align-items: center;
+    font-size: clamp(1.4rem, 6vw, 2rem);
+    width: 50%;
+    color: #fff;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.theme-box {
+    justify-content: flex-end;
+
+    .icon {
+        color: #fff;
+        font-size: clamp(1.6rem, 2.5vw, 3rem);
+        cursor: pointer;
+
+        &:hover {
+            color: rgba(255, 255, 255, 0.857);
+            animation: circle 1s forwards;
+            }
+
+            &:active {
+                transform: scale(0.8);
+            }
+        }
+    }
+}
+
+@keyframes circle {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

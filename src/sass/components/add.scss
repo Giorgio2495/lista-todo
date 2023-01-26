@@ -1,0 +1,45 @@
+@use '../util/color' as color;
+
+.add-task {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: color.$veryDarkDesaturatedBlue;
+    gap: 1em;
+    margin-top: 1.5em;
+    border-radius: 6px;
+    transition: 1s ease;
+    label{
+        display: inline;
+        content: " ";
+        width: 20px;
+        height: 20px;
+        background-color: transparent;
+        border: 1px solid color.$darkGrayishBlue;
+        border-radius: 150px;
+        cursor: pointer;
+    }
+    input[type="text"] {
+        display: inline;
+        width: 80%;
+        background-color: transparent;
+        color: #fff;
+        border: none;
+        font-family: "Josefin Sans", sans-serif;
+        padding: 1.5em 0em;
+        outline: none;
+    }
+}
+
+.content.light{
+    .add-task {
+        background-color: color.$veryLightGray;
+        label {
+            border: 1px solid color.$lightGrayishBlue;
+        }
+        input[type="text"] {
+            color: color.$veryDarkGrayishBlue;
+        }
+    }
+}
