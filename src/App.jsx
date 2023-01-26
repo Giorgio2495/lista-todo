@@ -46,11 +46,23 @@ const App = () => {
 
     const changeTheme = (newTheme) => setTheme(newTheme);
 
-    const getAllTasks = () => (setTasks(TasksAll), setCurrentFilter("all"));
+   /* const getAllTasks = () => (setTasks(TasksAll), setCurrentFilter("all"));*/
+   const getAllTasks = () => {
+    setTasks(TasksAll)
+    setCurrentFilter("all")
+   }
 
-    const getActiveTasks = (activeTasks) => (setTasks(activeTasks), setCurrentFilter("active"));
+    /*const getActiveTasks = (activeTasks) => (setTasks(activeTasks), setCurrentFilter("active"));*/
+   const getActiveTasks = (activeTasks) => {
+    setTasks(activeTasks)
+    setCurrentFilter("active")
+   }
 
-    const getCompletedTasks = (completedTasks) => (setTasks(completedTasks), setCurrentFilter("completed"));
+    /*const getCompletedTasks = (completedTasks) => (setTasks(completedTasks), setCurrentFilter("completed"));*/
+    const getCompletedTasks = (completedTasks) => {
+        setTasks(completedTasks)
+        setCurrentFilter("completed")
+    }
 
     const reset = (isReset) => setReset(isReset);
 
