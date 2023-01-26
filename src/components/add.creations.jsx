@@ -9,7 +9,7 @@ const Add = ({ countTask, setReset, reset }) => {
         if(e.target[0].value === "") {
             return;
         }
-        const docRef = await addDoc(collection(store, "tasks"), {
+         await addDoc(collection(store, "tasks"), {
             index: countTask + 1,
             task: e.target[0].value,
             completed: false,
